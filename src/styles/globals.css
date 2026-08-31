@@ -5,21 +5,21 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 5.5rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {
     @apply bg-white text-zinc-900 font-sans antialiased selection:bg-zinc-900 selection:text-white;
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
     min-width: 0;
   }
 
   #root {
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
   }
 

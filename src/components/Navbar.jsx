@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { trackPresupuestoClick } from '../utils/analytics'
 
 const navLinks = [
@@ -11,6 +11,18 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev)
@@ -20,13 +32,19 @@ export default function Navbar() {
     setIsMenuOpen(false)
   }
 
-  const handleCtaClick = () => {
-    trackPresupuestoClick('navbar')
+  const handleCtaClick = (location) => {
+    trackPresupuestoClick(location)
     closeMenu()
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-zinc-100 transition-all duration-300">
+    <header 
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/80 backdrop-blur-md border-b border-zinc-200/50 shadow-xs' 
+          : 'bg-white/90 backdrop-blur-md border-b border-zinc-100'
+      }`}
+    >
       <nav aria-label="Navegación principal" className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
         <a 
@@ -62,7 +80,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <a
             href="#contacto"
-            onClick={() => trackPresupuestoClick('navbar_desktop')}
+            onClick={() => handleCtaClick('navbar_desktop')}
             className="inline-flex items-center justify-center px-5 py-2.5 min-h-[44px] text-sm font-medium text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow"
           >
             Contacto
@@ -107,7 +125,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       <div 
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b border-zinc-100 bg-white/95 backdrop-blur-md ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-b border-zinc-200/50 bg-white/95 backdrop-blur-md ${
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
         }`}
       >
@@ -128,7 +146,7 @@ export default function Navbar() {
           <div className="pt-2">
             <a
               href="#contacto"
-              onClick={handleCtaClick}
+              onClick={() => handleCtaClick('navbar_mobile')}
               className="flex w-full items-center justify-center min-h-[48px] px-5 py-3 text-base font-semibold text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 shadow-sm active:bg-zinc-900"
             >
               Contacto
