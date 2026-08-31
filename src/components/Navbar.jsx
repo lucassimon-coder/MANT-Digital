@@ -26,11 +26,11 @@ export default function Navbar() {
         <a 
           href="#inicio" 
           className="flex items-center gap-2 transition-opacity duration-300 hover:opacity-80 focus-visible:ring-2 focus-visible:ring-zinc-900 rounded-lg p-1 min-h-[44px]"
-          aria-label="MANT Digital - Volver al inicio"
+          aria-label="MANTUANI DIGITAL - Volver al inicio"
         >
           <img 
             src="/img/logo.webp" 
-            alt="MANT Digital" 
+            alt="Logo de MANTUANI DIGITAL" 
             className="h-8 md:h-9 w-auto object-contain"
           />
         </a>

@@ -1,16 +1,16 @@
 const navLinks = [
-  { name: 'Inicio', href: '#inicio' },
-  { name: 'Servicios', href: '#servicios' },
-  { name: 'Proyectos', href: '#proyectos' },
-  { name: 'Proceso', href: '#proceso' },
-  { name: 'Sobre mí', href: '#sobre-mi' },
-  { name: 'Contacto', href: '#contacto' },
+  { name: 'Inicio', href: '#inicio', ariaLabel: 'Ir a la sección de Inicio' },
+  { name: 'Servicios', href: '#servicios', ariaLabel: 'Ir a la sección de Servicios' },
+  { name: 'Proyectos', href: '#proyectos', ariaLabel: 'Ir a la sección de Proyectos' },
+  { name: 'Proceso', href: '#proceso', ariaLabel: 'Ir a la sección de Proceso de trabajo' },
+  { name: 'Sobre mí', href: '#sobre-mi', ariaLabel: 'Ir a la sección Sobre mí' },
+  { name: 'Contacto', href: '#contacto', ariaLabel: 'Ir a la sección de Contacto' },
 ]
 
 const contactLinks = [
-  { name: 'WhatsApp', href: 'https://wa.me/' },
-  { name: 'Instagram', href: 'https://instagram.com/' },
-  { name: 'Email', href: 'mailto:contacto@mantdigital.com' },
+  { name: 'WhatsApp', href: 'https://wa.me/', ariaLabel: 'Contactar por WhatsApp a Mantuani Digital' },
+  { name: 'Instagram', href: 'https://instagram.com/', ariaLabel: 'Ir al perfil de Instagram de Mantuani Digital' },
+  { name: 'Email', href: 'mailto:contacto@mantdigital.com', ariaLabel: 'Enviar un email a Mantuani Digital' },
 ]
 
 export default function Footer() {
@@ -27,7 +27,7 @@ export default function Footer() {
             >
               <img
                 src="/img/logo.webp"
-                alt="MANT Digital Logo"
+                alt="Logo de MANTUANI DIGITAL"
                 className="h-8 w-auto object-contain brightness-0 invert opacity-90"
               />
             </a>
@@ -46,6 +46,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
+                    aria-label={link.ariaLabel}
                     className="text-sm text-zinc-400 hover:text-white transition-colors duration-300 inline-flex items-center min-h-[36px] py-1"
                   >
                     {link.name}
@@ -65,6 +66,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <a
                     href={item.href}
+                    aria-label={item.ariaLabel}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-zinc-400 hover:text-white transition-colors duration-300 inline-flex items-center min-h-[36px] py-1"
