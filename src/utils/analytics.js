@@ -1,9 +1,14 @@
 /**
- * Helper to dispatch custom events to Google Analytics 4 (GA4)
+ * Helper to dispatch custom events to Google Analytics 4 (GA4) safely
  */
 export function trackEvent(eventName, params = {}) {
-  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-    window.gtag('event', eventName, params)
+  try {
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params)
+    }
+  } catch (err) {
+    // Gracefully handle any analytics error (e.g. adblockers)
+    console.debug('GA4 tracking error:', err)
   }
 }
 
