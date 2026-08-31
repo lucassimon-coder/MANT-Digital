@@ -3,11 +3,11 @@ import { trackEvent } from '../utils/analytics'
 
 const projects = [
   {
-    category: 'Inmobiliaria',
-    description: 'Presencia profesional para captar clientes y propiedades.',
-    image: '/img/webServicios.webp',
-    alt: 'Mockup de landing page para empresa inmobiliaria',
-    url: null, // Soporta enlace externo opcional ej: 'https://ejemplo.com'
+    category: 'Hotel Las Gaviotas',
+    description: 'Landing page con experiencia inmersiva, catálogo de habitaciones y sistema interactivo de reservas para maximizar conversiones directas.',
+    image: '/img/weblasgaviotas.webp',
+    alt: 'Landing page Hotel Las Gaviotas - MANT DIGITAL',
+    url: 'https://hotellasgaviotasmdc.netlify.app',
   },
   {
     category: 'Restaurante',
