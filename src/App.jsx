@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import ValueProposition from './sections/ValueProposition'
+import Services from './sections/Services'
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <main className="flex-1">
         <Hero />
         <ValueProposition />
+        <Services />
       </main>
     </div>
   )
