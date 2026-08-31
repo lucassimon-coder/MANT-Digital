@@ -8,6 +8,7 @@ const projects = [
     image: '/img/weblasgaviotas.webp',
     alt: 'Landing page Hotel Las Gaviotas - MANT DIGITAL',
     url: 'https://hotellasgaviotasmdc.netlify.app',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Jest'],
   },
   {
     category: 'Restaurante',
@@ -15,6 +16,7 @@ const projects = [
     image: '/img/hero.webp',
     alt: 'Mockup de landing page para restaurante y gastronomía',
     url: null,
+    tags: ['React', 'Tailwind CSS', 'Vite'],
   },
   {
     category: 'Barbería',
@@ -22,6 +24,7 @@ const projects = [
     image: '/img/webBarberia.webp',
     alt: 'Mockup de landing page para barbería y estética',
     url: null,
+    tags: ['React', 'Tailwind CSS', 'Mobile First'],
   },
   {
     category: 'Clínica',
@@ -29,6 +32,7 @@ const projects = [
     image: '/img/webMedica.webp',
     alt: 'Mockup de landing page para clínica y profesionales de salud',
     url: null,
+    tags: ['React', 'Tailwind CSS', 'SEO'],
   },
 ]
 
@@ -144,6 +148,20 @@ export default function Projects() {
                     <p className="text-sm sm:text-base text-zinc-500 leading-relaxed mt-1">
                       {project.description}
                     </p>
+
+                    {/* Technology Badges */}
+                    {project.tags && project.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2 mt-3.5">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-xs px-2.5 py-0.5 rounded-full bg-zinc-100 text-zinc-700 font-medium border border-zinc-200/60"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </CardWrapper>
               </article>
