@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import ValueProposition from './sections/ValueProposition'
 import Services from './sections/Services'
+import Projects from './sections/Projects'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Hero />
         <ValueProposition />
         <Services />
+        <Projects />
       </main>
     </div>
   )
