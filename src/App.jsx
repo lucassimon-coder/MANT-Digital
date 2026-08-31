@@ -4,6 +4,7 @@ import ValueProposition from './sections/ValueProposition'
 import Services from './sections/Services'
 import Projects from './sections/Projects'
 import Process from './sections/Process'
+import About from './sections/About'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Services />
         <Projects />
         <Process />
+        <About />
       </main>
     </div>
   )
