@@ -53,22 +53,22 @@ export default function Projects() {
     <section 
       id="proyectos" 
       ref={sectionRef}
-      className="py-20 md:py-32 bg-white relative overflow-hidden border-t border-zinc-100"
+      className="py-16 sm:py-20 md:py-28 lg:py-32 bg-white relative overflow-hidden border-t border-zinc-100"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div 
-          className={`max-w-3xl mx-auto text-center mb-16 md:mb-24 space-y-4 transition-all duration-700 ease-out transform ${
+          className={`max-w-3xl mx-auto text-center mb-12 sm:mb-16 md:mb-24 space-y-4 transition-all duration-700 ease-out transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200/80 text-xs font-medium text-zinc-700">
             <span>Proyectos</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-zinc-900 tracking-tight leading-tight">
             Diseños pensados para cada negocio.
           </h2>
-          <p className="text-lg md:text-xl text-zinc-500 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-500 font-normal leading-relaxed">
             Cada proyecto tiene una identidad propia. La web se adapta a tu negocio, no al revés.
           </p>
         </div>
@@ -96,11 +96,11 @@ export default function Projects() {
                 </div>
 
                 {/* Project Metadata */}
-                <div className="mt-6 flex flex-col items-start text-left">
-                  <h3 className="text-xl font-bold text-zinc-900 tracking-tight transition-colors duration-300 group-hover:text-zinc-700">
+                <div className="mt-5 sm:mt-6 flex flex-col items-start text-left">
+                  <h3 className="text-lg sm:text-xl font-bold text-zinc-900 tracking-tight transition-colors duration-300 group-hover:text-zinc-700">
                     {project.category}
                   </h3>
-                  <p className="text-base text-zinc-500 leading-relaxed mt-1">
+                  <p className="text-sm sm:text-base text-zinc-500 leading-relaxed mt-1">
                     {project.description}
                   </p>
                 </div>

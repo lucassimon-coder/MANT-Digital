@@ -59,7 +59,7 @@ export default function ValueProposition() {
     <section 
       id="propuesta" 
       ref={sectionRef} 
-      className="py-20 md:py-32 bg-white relative overflow-hidden border-t border-zinc-100"
+      className="py-16 sm:py-20 md:py-28 lg:py-32 bg-white relative overflow-hidden border-t border-zinc-100"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
@@ -68,21 +68,21 @@ export default function ValueProposition() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-zinc-900 tracking-tight leading-tight">
             Tu negocio merece una presencia digital a la altura.
           </h2>
-          <p className="text-lg md:text-xl text-zinc-500 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-500 font-normal leading-relaxed">
             Una web profesional para mostrar lo que hacés, generar confianza y facilitar el contacto con tus clientes.
           </p>
         </div>
 
         {/* 3 Value Pillars Grid */}
-        <div className="mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {concepts.map((concept, index) => (
             <div
               key={concept.title}
               style={{ transitionDelay: `${(index + 1) * 120}ms` }}
-              className={`p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80 hover:border-zinc-300 hover:bg-zinc-50/90 transition-all duration-500 ease-out flex flex-col justify-between transform ${
+              className={`p-6 sm:p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80 hover:border-zinc-300 hover:bg-zinc-50/90 transition-all duration-500 ease-out flex flex-col justify-between transform ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             >
@@ -95,10 +95,10 @@ export default function ValueProposition() {
                     {concept.step}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900 tracking-tight mb-2">
+                <h3 className="text-lg sm:text-xl font-bold text-zinc-900 tracking-tight mb-2">
                   {concept.title}
                 </h3>
-                <p className="text-base text-zinc-500 leading-relaxed">
+                <p className="text-sm sm:text-base text-zinc-500 leading-relaxed">
                   {concept.description}
                 </p>
               </div>
@@ -109,7 +109,7 @@ export default function ValueProposition() {
         {/* Conceptual Visual Asset */}
         <div 
           style={{ transitionDelay: '450ms' }}
-          className={`mt-14 md:mt-20 max-w-4xl mx-auto transition-all duration-700 ease-out transform ${
+          className={`mt-12 sm:mt-16 md:mt-20 max-w-4xl mx-auto transition-all duration-700 ease-out transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >

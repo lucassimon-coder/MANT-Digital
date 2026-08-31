@@ -83,28 +83,28 @@ export default function Services() {
     <section 
       id="servicios" 
       ref={sectionRef}
-      className="py-20 md:py-32 bg-zinc-50/70 relative overflow-hidden border-t border-zinc-100"
+      className="py-16 sm:py-20 md:py-28 lg:py-32 bg-zinc-50/70 relative overflow-hidden border-t border-zinc-100"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div 
-          className={`max-w-3xl mb-14 md:mb-20 space-y-4 transition-all duration-700 ease-out transform ${
+          className={`max-w-3xl mb-12 sm:mb-16 md:mb-20 space-y-4 transition-all duration-700 ease-out transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-200/80 text-xs font-medium text-zinc-700">
             <span>Servicios</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-zinc-900 tracking-tight leading-tight">
             Todo lo necesario para estar online.
           </h2>
-          <p className="text-lg md:text-xl text-zinc-500 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-500 font-normal leading-relaxed">
             Una landing page diseñada para tu negocio, sin complicaciones.
           </p>
         </div>
 
         {/* 2-Column Layout: Visual Asset + 6 Feature Items */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Visual Asset (Image) */}
           <div 
             style={{ transitionDelay: '200ms' }}
@@ -117,7 +117,7 @@ export default function Services() {
                 src="/img/desarrollando.webp"
                 alt="Diseño y desarrollo web para negocios"
                 loading="lazy"
-                className="w-full h-[360px] sm:h-[440px] lg:h-[520px] object-cover object-center block"
+                className="w-full h-[280px] sm:h-[400px] lg:h-[520px] object-cover object-center block"
               />
             </div>
           </div>
@@ -129,14 +129,14 @@ export default function Services() {
                 <li
                   key={service.title}
                   style={{ transitionDelay: `${(index + 1) * 100}ms` }}
-                  className={`p-6 rounded-2xl bg-white border border-zinc-200/80 hover:border-zinc-300 hover:shadow-xs transition-all duration-300 ease-out flex flex-col justify-start transform ${
+                  className={`p-5 sm:p-6 rounded-2xl bg-white border border-zinc-200/80 hover:border-zinc-300 hover:shadow-xs transition-all duration-300 ease-out flex flex-col justify-start transform ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                   }`}
                 >
                   <div className="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-200/60 flex items-center justify-center mb-4 text-zinc-900 shadow-xs">
                     {service.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-zinc-900 tracking-tight mb-1">
+                  <h3 className="text-base sm:text-lg font-semibold text-zinc-900 tracking-tight mb-1">
                     {service.title}
                   </h3>
                   <p className="text-sm md:text-base text-zinc-500 leading-relaxed">

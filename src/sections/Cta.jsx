@@ -26,7 +26,7 @@ export default function Cta() {
     <section 
       id="contacto" 
       ref={sectionRef}
-      className="py-24 md:py-40 bg-zinc-50/50 relative overflow-hidden border-t border-zinc-100"
+      className="py-16 sm:py-24 md:py-32 lg:py-40 bg-zinc-50/50 relative overflow-hidden border-t border-zinc-100"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl mx-auto text-center">
@@ -42,7 +42,7 @@ export default function Cta() {
           {/* Heading */}
           <h2 
             style={{ transitionDelay: '100ms' }}
-            className={`text-4xl sm:text-5xl md:text-6xl font-extrabold text-zinc-900 tracking-tight leading-tight mb-6 transition-all duration-700 ease-out transform ${
+            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-zinc-900 tracking-tight leading-tight mb-6 transition-all duration-700 ease-out transform ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
@@ -52,7 +52,7 @@ export default function Cta() {
           {/* Subtitle */}
           <p 
             style={{ transitionDelay: '200ms' }}
-            className={`text-lg sm:text-xl text-zinc-500 font-normal leading-relaxed mb-10 max-w-2xl mx-auto transition-all duration-700 ease-out transform ${
+            className={`text-base sm:text-lg md:text-xl text-zinc-500 font-normal leading-relaxed mb-10 max-w-2xl mx-auto transition-all duration-700 ease-out transform ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
@@ -68,7 +68,7 @@ export default function Cta() {
           >
             <a
               href="mailto:contacto@mantdigital.com"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 hover:-translate-y-1 active:translate-y-0 shadow-sm hover:shadow-md text-center"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 min-h-[48px] text-base font-semibold text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 hover:-translate-y-1 active:translate-y-0 shadow-sm hover:shadow-md text-center"
             >
               Solicitar presupuesto
             </a>
@@ -76,7 +76,7 @@ export default function Cta() {
               href="https://wa.me/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-zinc-900 bg-white border-2 border-zinc-200 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-50 hover:border-zinc-300 hover:-translate-y-1 active:translate-y-0 text-center shadow-2xs"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 min-h-[48px] text-base font-semibold text-zinc-900 bg-white border-2 border-zinc-200 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-50 hover:border-zinc-300 hover:-translate-y-1 active:translate-y-0 text-center shadow-2xs"
             >
               Hablar por WhatsApp
             </a>

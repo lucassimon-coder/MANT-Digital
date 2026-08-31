@@ -41,10 +41,10 @@ export default function About() {
     <section 
       id="sobre-mi" 
       ref={sectionRef}
-      className="py-20 md:py-32 bg-white relative overflow-hidden border-t border-zinc-100"
+      className="py-16 sm:py-20 md:py-28 lg:py-32 bg-white relative overflow-hidden border-t border-zinc-100"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Column 1: Founder Photograph */}
           <div 
             style={{ transitionDelay: '150ms' }}
@@ -52,7 +52,7 @@ export default function About() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-zinc-100 ring-1 ring-zinc-900/5 shadow-sm border border-zinc-200/60 group">
+            <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none rounded-2xl overflow-hidden bg-zinc-100 ring-1 ring-zinc-900/5 shadow-sm border border-zinc-200/60 group">
               <img
                 src="/img/desarrollando.webp"
                 alt="Lucas Mantuani - Desarrollador y fundador de Mantuani Digital"
@@ -78,10 +78,10 @@ export default function About() {
 
             {/* Main Narrative Headings */}
             <div className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 leading-snug tracking-tight">
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-zinc-900 leading-snug tracking-tight">
                 Soy Lucas Mantuani, desarrollador web enfocado en crear experiencias digitales modernas para negocios que quieren crecer.
               </h2>
-              <p className="text-lg md:text-xl text-zinc-500 font-normal leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-zinc-500 font-normal leading-relaxed">
                 Combino diseño, tecnología y estrategia para transformar ideas en páginas web profesionales.
               </p>
             </div>

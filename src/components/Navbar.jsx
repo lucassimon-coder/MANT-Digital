@@ -25,7 +25,7 @@ export default function Navbar() {
         {/* Logo */}
         <a 
           href="#inicio" 
-          className="flex items-center gap-2 transition-opacity duration-300 hover:opacity-80 focus-visible:ring-2 focus-visible:ring-zinc-900 rounded-lg p-1"
+          className="flex items-center gap-2 transition-opacity duration-300 hover:opacity-80 focus-visible:ring-2 focus-visible:ring-zinc-900 rounded-lg p-1 min-h-[44px]"
           aria-label="MANT Digital - Volver al inicio"
         >
           <img 
@@ -37,15 +37,15 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-8 list-none p-0 m-0">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="relative py-1 text-sm font-medium text-zinc-600 transition-all duration-300 ease-in-out hover:text-zinc-950 group"
+                  className="relative py-2 text-sm font-medium text-zinc-600 transition-all duration-300 ease-in-out hover:text-zinc-950 group inline-block"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-zinc-950 transition-all duration-300 ease-in-out group-hover:w-full" />
+                  <span className="absolute bottom-1 left-0 w-0 h-[2px] bg-zinc-950 transition-all duration-300 ease-in-out group-hover:w-full" />
                 </a>
               </li>
             ))}
@@ -56,7 +56,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <a
             href="#contacto"
-            className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow"
+            className="inline-flex items-center justify-center px-5 py-2.5 min-h-[44px] text-sm font-medium text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow"
           >
             Contacto
           </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleMenu}
-            className="p-2.5 rounded-xl text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 transition-all duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-zinc-900"
+            className="p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 transition-all duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-zinc-900"
             aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
             aria-expanded={isMenuOpen}
           >
@@ -105,13 +105,13 @@ export default function Navbar() {
         }`}
       >
         <div className="px-6 py-6 space-y-4">
-          <ul className="space-y-3">
+          <ul className="space-y-1 list-none p-0 m-0">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
                   onClick={closeMenu}
-                  className="block py-2 text-base font-medium text-zinc-700 hover:text-zinc-950 transition-colors duration-200"
+                  className="flex items-center min-h-[44px] px-3 py-2.5 -mx-3 rounded-lg text-base font-medium text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100/80 active:bg-zinc-100 transition-colors duration-200"
                 >
                   {link.name}
                 </a>
@@ -122,7 +122,7 @@ export default function Navbar() {
             <a
               href="#contacto"
               onClick={closeMenu}
-              className="flex w-full items-center justify-center px-5 py-3 text-base font-medium text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 shadow-sm"
+              className="flex w-full items-center justify-center min-h-[48px] px-5 py-3 text-base font-semibold text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 shadow-sm active:bg-zinc-900"
             >
               Contacto
             </a>

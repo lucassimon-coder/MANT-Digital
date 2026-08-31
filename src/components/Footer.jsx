@@ -16,14 +16,14 @@ const contactLinks = [
 export default function Footer() {
   return (
     <footer className="bg-zinc-950 text-zinc-400 border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-20 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-12 sm:pb-16">
           {/* Column 1: Brand & Bio */}
           <div className="lg:col-span-6 space-y-4">
             <a 
               href="#inicio" 
-              className="inline-block transition-opacity duration-300 hover:opacity-80 focus-visible:ring-2 focus-visible:ring-white rounded-lg"
-              aria-label="MANT Digital - Volver arriba"
+              className="inline-block transition-opacity duration-300 hover:opacity-80 focus-visible:ring-2 focus-visible:ring-white rounded-lg p-1 min-h-[44px]"
+              aria-label="MANT Digital - Volver al inicio"
             >
               <img
                 src="/img/logo.webp"
@@ -41,12 +41,12 @@ export default function Footer() {
             <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-white">
               Navegación
             </h3>
-            <ul className="space-y-2.5 list-none p-0 m-0">
+            <ul className="space-y-1 list-none p-0 m-0">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-zinc-400 hover:text-white transition-colors duration-300 inline-block py-0.5"
+                    className="text-sm text-zinc-400 hover:text-white transition-colors duration-300 inline-flex items-center min-h-[36px] py-1"
                   >
                     {link.name}
                   </a>
@@ -60,14 +60,14 @@ export default function Footer() {
             <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-white">
               Contacto
             </h3>
-            <ul className="space-y-2.5 list-none p-0 m-0">
+            <ul className="space-y-1 list-none p-0 m-0">
               {contactLinks.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-zinc-400 hover:text-white transition-colors duration-300 inline-block py-0.5"
+                    className="text-sm text-zinc-400 hover:text-white transition-colors duration-300 inline-flex items-center min-h-[36px] py-1"
                   >
                     {item.name}
                   </a>
