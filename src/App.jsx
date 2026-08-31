@@ -7,6 +7,7 @@ import Process from './sections/Process'
 import About from './sections/About'
 import Cta from './sections/Cta'
 import Footer from './components/Footer'
+import FloatingWhatsApp from './components/FloatingWhatsApp'
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Cta />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   )
 }

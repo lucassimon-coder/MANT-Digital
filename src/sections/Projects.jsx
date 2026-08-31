@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { trackEvent } from '../utils/analytics'
 
 const projects = [
   {
@@ -6,24 +7,28 @@ const projects = [
     description: 'Presencia profesional para captar clientes y propiedades.',
     image: '/img/webServicios.webp',
     alt: 'Mockup de landing page para empresa inmobiliaria',
+    url: null, // Soporta enlace externo opcional ej: 'https://ejemplo.com'
   },
   {
     category: 'Restaurante',
     description: 'Una experiencia digital pensada para mostrar y convertir.',
     image: '/img/hero.webp',
     alt: 'Mockup de landing page para restaurante y gastronomía',
+    url: null,
   },
   {
     category: 'Barbería',
     description: 'Diseño moderno para reservas y presentación de servicios.',
     image: '/img/webBarberia.webp',
     alt: 'Mockup de landing page para barbería y estética',
+    url: null,
   },
   {
     category: 'Clínica',
     description: 'Una presencia clara y profesional para generar confianza.',
     image: '/img/webMedica.webp',
     alt: 'Mockup de landing page para clínica y profesionales de salud',
+    url: null,
   },
 ]
 
@@ -48,6 +53,15 @@ export default function Projects() {
 
     return () => observer.disconnect()
   }, [])
+
+  const handleProjectClick = (category, url) => {
+    if (url) {
+      trackEvent('click_project_external', {
+        project_category: category,
+        target_url: url,
+      })
+    }
+  }
 
   return (
     <section 
@@ -77,6 +91,17 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16">
           {projects.map((project, index) => {
             const isEven = index % 2 === 1
+            const CardWrapper = project.url ? 'a' : 'div'
+            const wrapperProps = project.url 
+              ? {
+                  href: project.url,
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  onClick: () => handleProjectClick(project.category, project.url),
+                  className: 'cursor-pointer block focus-visible:ring-2 focus-visible:ring-zinc-900 rounded-2xl'
+                }
+              : { className: 'block' }
+
             return (
               <article
                 key={project.category}
@@ -85,25 +110,42 @@ export default function Projects() {
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
-                {/* Visual Card Container */}
-                <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-100 ring-1 ring-zinc-900/5 shadow-xs transition-all duration-500">
-                  <img
-                    src={project.image}
-                    alt={project.alt}
-                    loading="lazy"
-                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 block"
-                  />
-                </div>
+                <CardWrapper {...wrapperProps}>
+                  {/* Visual Card Container */}
+                  <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-100 ring-1 ring-zinc-900/5 shadow-xs transition-all duration-500">
+                    <img
+                      src={project.image}
+                      alt={project.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 block"
+                    />
+                    {project.url && (
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-xs text-xs font-medium text-zinc-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5">
+                        <span>Ver sitio</span>
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
 
-                {/* Project Metadata */}
-                <div className="mt-5 sm:mt-6 flex flex-col items-start text-left">
-                  <h3 className="text-lg sm:text-xl font-bold text-zinc-900 tracking-tight transition-colors duration-300 group-hover:text-zinc-700">
-                    {project.category}
-                  </h3>
-                  <p className="text-sm sm:text-base text-zinc-500 leading-relaxed mt-1">
-                    {project.description}
-                  </p>
-                </div>
+                  {/* Project Metadata */}
+                  <div className="mt-5 sm:mt-6 flex flex-col items-start text-left">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-zinc-900 tracking-tight transition-colors duration-300 group-hover:text-zinc-700">
+                        {project.category}
+                      </h3>
+                      {project.url && (
+                        <svg className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      )}
+                    </div>
+                    <p className="text-sm sm:text-base text-zinc-500 leading-relaxed mt-1">
+                      {project.description}
+                    </p>
+                  </div>
+                </CardWrapper>
               </article>
             )
           })}

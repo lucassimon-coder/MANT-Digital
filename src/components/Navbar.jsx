@@ -41,7 +41,7 @@ export default function Navbar() {
     <header 
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/80 backdrop-blur-md border-b border-zinc-200/50 shadow-xs' 
+          ? 'bg-white/80 backdrop-blur-md border-b border-zinc-200/60 shadow-xs' 
           : 'bg-white/90 backdrop-blur-md border-b border-zinc-100'
       }`}
     >
@@ -55,7 +55,7 @@ export default function Navbar() {
           <img 
             src="/img/logo.webp" 
             alt="Logo de MANTUANI DIGITAL" 
-            className="h-8 md:h-9 w-auto object-contain"
+            className="h-10 sm:h-12 w-auto object-contain"
           />
         </a>
 
