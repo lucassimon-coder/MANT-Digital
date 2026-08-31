@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
+const WHATSAPP_URL = "https://wa.me/59892979142?text=Hola%20Lucas,%20quiero%20consultar%20por%20una%20landing%20page%20para%20mi%20negocio."
+
 export default function Cta() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
@@ -73,9 +75,10 @@ export default function Cta() {
               Solicitar presupuesto
             </a>
             <a
-              href="https://wa.me/"
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Hablar por WhatsApp con Lucas Mantuani"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 min-h-[48px] text-base font-semibold text-zinc-900 bg-white border-2 border-zinc-200 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-50 hover:border-zinc-300 hover:-translate-y-1 active:translate-y-0 text-center shadow-2xs"
             >
               Hablar por WhatsApp

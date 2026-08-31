@@ -8,9 +8,21 @@ const navLinks = [
 ]
 
 const contactLinks = [
-  { name: 'WhatsApp', href: 'https://wa.me/', ariaLabel: 'Contactar por WhatsApp a Mantuani Digital' },
-  { name: 'Instagram', href: 'https://instagram.com/', ariaLabel: 'Ir al perfil de Instagram de Mantuani Digital' },
-  { name: 'Email', href: 'mailto:contacto@mantdigital.com', ariaLabel: 'Enviar un email a Mantuani Digital' },
+  { 
+    name: 'WhatsApp', 
+    href: 'https://wa.me/59892979142?text=Hola%20Lucas,%20quiero%20consultar%20por%20una%20landing%20page%20para%20mi%20negocio.', 
+    ariaLabel: 'Contactar por WhatsApp a Mantuani Digital' 
+  },
+  { 
+    name: 'Instagram', 
+    href: 'https://instagram.com/mantdigital', 
+    ariaLabel: 'Ir al perfil de Instagram de Mantuani Digital' 
+  },
+  { 
+    name: 'Email', 
+    href: 'mailto:contacto@mantdigital.com', 
+    ariaLabel: 'Enviar un email a Mantuani Digital' 
+  },
 ]
 
 export default function Footer() {
@@ -23,7 +35,7 @@ export default function Footer() {
             <a 
               href="#inicio" 
               className="inline-block transition-opacity duration-300 hover:opacity-80 focus-visible:ring-2 focus-visible:ring-white rounded-lg p-1 min-h-[44px]"
-              aria-label="MANT Digital - Volver al inicio"
+              aria-label="MANTUANI DIGITAL - Volver al inicio"
             >
               <img
                 src="/img/logo.webp"
@@ -67,8 +79,8 @@ export default function Footer() {
                   <a
                     href={item.href}
                     aria-label={item.ariaLabel}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={item.href.startsWith('http') ? "_blank" : undefined}
+                    rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
                     className="text-sm text-zinc-400 hover:text-white transition-colors duration-300 inline-flex items-center min-h-[36px] py-1"
                   >
                     {item.name}
