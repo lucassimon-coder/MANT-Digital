@@ -1,3 +1,5 @@
+import { trackWhatsAppClick, trackPresupuestoClick, trackEvent } from '../utils/analytics'
+
 const navLinks = [
   { name: 'Inicio', href: '#inicio', ariaLabel: 'Ir a la sección de Inicio' },
   { name: 'Servicios', href: '#servicios', ariaLabel: 'Ir a la sección de Servicios' },
@@ -11,17 +13,20 @@ const contactLinks = [
   { 
     name: 'WhatsApp', 
     href: 'https://wa.me/59892979142?text=Hola%20Lucas,%20quiero%20consultar%20por%20una%20landing%20page%20para%20mi%20negocio.', 
-    ariaLabel: 'Contactar por WhatsApp a Mantuani Digital' 
+    ariaLabel: 'Contactar por WhatsApp a Mantuani Digital',
+    onClick: () => trackWhatsAppClick('footer')
   },
   { 
     name: 'Instagram', 
     href: 'https://instagram.com/mantdigital', 
-    ariaLabel: 'Ir al perfil de Instagram de Mantuani Digital' 
+    ariaLabel: 'Ir al perfil de Instagram de Mantuani Digital',
+    onClick: () => trackEvent('click_instagram', { location: 'footer' })
   },
   { 
     name: 'Email', 
     href: 'mailto:contacto@mantdigital.com', 
-    ariaLabel: 'Enviar un email a Mantuani Digital' 
+    ariaLabel: 'Enviar un email a Mantuani Digital',
+    onClick: () => trackPresupuestoClick('footer_email')
   },
 ]
 
@@ -79,6 +84,7 @@ export default function Footer() {
                   <a
                     href={item.href}
                     aria-label={item.ariaLabel}
+                    onClick={item.onClick}
                     target={item.href.startsWith('http') ? "_blank" : undefined}
                     rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
                     className="text-sm text-zinc-400 hover:text-white transition-colors duration-300 inline-flex items-center min-h-[36px] py-1"

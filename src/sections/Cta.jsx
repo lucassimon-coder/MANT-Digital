@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { trackWhatsAppClick, trackPresupuestoClick } from '../utils/analytics'
 
 const WHATSAPP_URL = "https://wa.me/59892979142?text=Hola%20Lucas,%20quiero%20consultar%20por%20una%20landing%20page%20para%20mi%20negocio."
 
@@ -70,6 +71,7 @@ export default function Cta() {
           >
             <a
               href="mailto:contacto@mantdigital.com"
+              onClick={() => trackPresupuestoClick('cta_section')}
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 min-h-[48px] text-base font-semibold text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 hover:-translate-y-1 active:translate-y-0 shadow-sm hover:shadow-md text-center"
             >
               Solicitar presupuesto
@@ -78,6 +80,7 @@ export default function Cta() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick('cta_section')}
               aria-label="Hablar por WhatsApp con Lucas Mantuani"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 min-h-[48px] text-base font-semibold text-zinc-900 bg-white border-2 border-zinc-200 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-50 hover:border-zinc-300 hover:-translate-y-1 active:translate-y-0 text-center shadow-2xs"
             >

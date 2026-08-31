@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { trackPresupuestoClick } from '../utils/analytics'
 
 const navLinks = [
   { name: 'Inicio', href: '#inicio' },
@@ -17,6 +18,11 @@ export default function Navbar() {
 
   const closeMenu = () => {
     setIsMenuOpen(false)
+  }
+
+  const handleCtaClick = () => {
+    trackPresupuestoClick('navbar')
+    closeMenu()
   }
 
   return (
@@ -56,6 +62,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <a
             href="#contacto"
+            onClick={() => trackPresupuestoClick('navbar_desktop')}
             className="inline-flex items-center justify-center px-5 py-2.5 min-h-[44px] text-sm font-medium text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow"
           >
             Contacto
@@ -121,7 +128,7 @@ export default function Navbar() {
           <div className="pt-2">
             <a
               href="#contacto"
-              onClick={closeMenu}
+              onClick={handleCtaClick}
               className="flex w-full items-center justify-center min-h-[48px] px-5 py-3 text-base font-semibold text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 shadow-sm active:bg-zinc-900"
             >
               Contacto

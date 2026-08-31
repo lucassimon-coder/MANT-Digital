@@ -1,3 +1,5 @@
+import { trackPresupuestoClick, trackEvent } from '../utils/analytics'
+
 export default function Hero() {
   return (
     <section id="inicio" className="relative pt-6 pb-14 sm:pt-10 sm:pb-20 md:pt-16 md:pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
@@ -19,12 +21,14 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2 animate-fade-in-up animation-delay-300">
               <a
                 href="#contacto"
+                onClick={() => trackPresupuestoClick('hero_section')}
                 className="inline-flex items-center justify-center px-7 py-3.5 min-h-[48px] text-base font-semibold text-white bg-zinc-950 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-800 hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow-md text-center"
               >
                 Quiero mi landing
               </a>
               <a
                 href="#proyectos"
+                onClick={() => trackEvent('click_view_projects', { location: 'hero_section' })}
                 className="inline-flex items-center justify-center px-7 py-3.5 min-h-[48px] text-base font-medium text-zinc-900 bg-white border border-zinc-200 rounded-xl transition-all duration-300 ease-in-out hover:bg-zinc-50 hover:border-zinc-300 hover:-translate-y-0.5 active:translate-y-0 text-center"
               >
                 Ver proyectos
