@@ -11,20 +11,20 @@ const projects = [
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Jest'],
   },
   {
-    category: 'Restaurante',
-    description: 'Una experiencia digital pensada para mostrar y convertir.',
-    image: '/img/hero.webp',
-    alt: 'Mockup de landing page para restaurante y gastronomía',
-    url: null,
-    tags: ['React', 'Tailwind CSS', 'Vite'],
+    category: 'Mónica Silva Pinczak – Escribana Pública',
+    description: 'Sitio web institucional y profesional para estudio notarial, enfocado en transmitir seriedad jurídica, claridad en servicios legales y canalización directa de consultas notariales.',
+    image: '/img/webMonicaSilva.webp',
+    alt: 'Sitio web Mónica Silva Pinczak - Escribana Pública - MANT DIGITAL',
+    url: 'https://monicasilvapinczak.netlify.app/',
+    tags: ['React', 'Tailwind CSS', 'Vite', 'SEO'],
   },
   {
-    category: 'Barbería',
-    description: 'Diseño moderno para reservas y presentación de servicios.',
-    image: '/img/webBarberia.webp',
-    alt: 'Mockup de landing page para barbería y estética',
-    url: null,
-    tags: ['React', 'Tailwind CSS', 'Mobile First'],
+    category: 'Perfumesbuuy',
+    description: 'Catálogo digital interactivo de perfumería con pedidos directos vía WhatsApp y panel de administración con base de datos para la gestión autónoma de productos e inventario.',
+    image: '/img/perfumesbuuy.webp',
+    alt: 'Catálogo digital interactivo Perfumesbuuy - MANT DIGITAL',
+    url: 'https://perfumesbuuy.com',
+    tags: ['React', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
   },
   {
     category: 'Clínica',
@@ -124,7 +124,7 @@ export default function Projects() {
                       className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 block"
                     />
                     {project.url && (
-                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-xs text-xs font-medium text-zinc-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1.5">
+                      <div className="hidden sm:flex absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-xs text-xs font-medium text-zinc-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-center gap-1.5">
                         <span>Ver sitio</span>
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -140,7 +140,7 @@ export default function Projects() {
                         {project.category}
                       </h3>
                       {project.url && (
-                        <svg className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <svg className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 transition-colors flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                       )}
@@ -160,6 +160,16 @@ export default function Projects() {
                             {tag}
                           </span>
                         ))}
+                      </div>
+                    )}
+
+                    {/* Mobile View Site Indicator (In-flow to prevent overlap) */}
+                    {project.url && (
+                      <div className="mt-4 inline-flex sm:hidden items-center gap-1.5 text-xs font-semibold text-zinc-900 group-hover:text-zinc-700 transition-colors">
+                        <span>Ver sitio web</span>
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
                       </div>
                     )}
                   </div>
